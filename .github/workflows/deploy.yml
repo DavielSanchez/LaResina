@@ -23,4 +23,4 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         password: ${{ secrets.SERVER_SSH_KEY }}
         local-dir: ./
-        server-dir: /public_html/laresina
+        server-dir: /public_html/laresina/
