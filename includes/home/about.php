@@ -2,7 +2,7 @@
 
     <div class="container section-title" data-aos="fade-up">
         <h2>Nuestra Historia</h2>
-        <p><span>Conoce más</span> <span class="description-title">Sobre La Resina</span></p>
+        <p><span>Conoce más</span> <span class="description-title">Sobre La Resina<span class='text-black' >.</span></span></p>
     </div>
 
     <div class="container">
