@@ -1,39 +1,26 @@
-name: Deploy to Server
+name: Deploy PHP Site
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
-        
-    - name: Validate PHP syntax
-      run: find . -name "*.php" -exec php -l {} \;
-      
-    - name: Run tests (si tienes)
+    - uses: actions/checkout@v3
+    
+    - name: PHP Syntax Check
       run: |
-        composer install --no-progress --no-interaction
-        ./vendor/bin/phpunit
-      
-    - name: Deploy to server via SSH
-      uses: appleboy/ssh-action@v0.1.7
+        for file in $(find . -name "*.php"); do
+          php -l "$file" || exit 1
+        done
+        
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.3
       with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SERVER_SSH_KEY }}
-        script: |
-          cd /var/www/html/Yummi
-          git pull origin main
-          sudo systemctl reload apache2
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/
