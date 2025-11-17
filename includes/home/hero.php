@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="Restaurante La Resina - Experiencias culinarias únicas">
+                <img src="assets/img/hero-img2.png" class="img-fluid animated" alt="Restaurante La Resina - Experiencias culinarias únicas">
             </div>
         </div>
     </div>
