@@ -23,5 +23,5 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         password: ${{ secrets.SERVER_SSH_KEY }}
         local-dir: ./
-        server-dir: /LaResina/
+        server-dir: /
         dangerous-clean-slate: true
