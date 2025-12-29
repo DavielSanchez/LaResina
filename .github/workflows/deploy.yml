@@ -17,11 +17,11 @@ jobs:
         done
         
     - name: Deploy via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USER }}
-        password: ${{ secrets.SERVER_SSH_KEY }}
-        local-dir: ./
-        server-dir: /
-        dangerous-clean-slate: true
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+  with:
+    server: ${{ secrets.SERVER_HOST }}
+    username: ${{ secrets.SERVER_USER }}
+    password: ${{ secrets.SERVER_SSH_KEY }}
+    local-dir: ./
+    server-dir: /LaResina/
+    dangerous-clean-slate: true
