@@ -52,7 +52,7 @@
                             <div class="col-md-4">
                                 <i class="bi bi-info-circle icon"></i>
                                 <h5>Políticas</h5>
-                                <p>Confirmación en 24h<br>Cancelación con anticipación</p>
+                                <p>Confirmación en 24h <br> Cancelación con anticipación</p>
                             </div>
                         </div>
                     </div>
